@@ -1,0 +1,88 @@
+@import "../../../../core/theme/variables/variables";
+
+.app-articles-preview-card {
+  padding: map_get($spacers, 1) 0;
+  border-bottom: 1px solid var-color("neutral", "light");
+
+  .app-articles-preview-card__title {
+    transition: color $default-transition;
+  }
+
+  .app-articles-preview-card__content {
+    display: flex;
+
+    .app-articles-preview-card__paragraph {
+      position: relative;
+      width: 75%;
+      max-height: $font-small * $paragraph-line-height * 5.5;
+      overflow-y: hidden;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        height: $font-small * $paragraph-line-height;
+        background: linear-gradient(0, var-color("neutral", "lighter"), transparent);
+      }
+    }
+
+    .app-articles-preview-card__image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      min-width: 100px;
+      padding: map_get($spacers, 2);
+
+      .app-articles-preview-card__image {
+        width: 100px;
+        height: 100px;
+        border-radius: $border-radius-default * 4;
+        background-color: var-color("neutral", "light");
+      }
+    }
+  }
+
+  &:hover {
+    .app-articles-preview-card__title {
+      color: var-color("primary", "normal");
+    }
+  }
+
+  @include down-sm {
+    .app-articles-preview-card__content {
+      .app-articles-preview-card__image-wrapper {
+        display: none;
+      }
+
+      .app-articles-preview-card__paragraph {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.app-articles-preview-card.app-articles-preview-card--loading {
+  .app-articles-preview-card__title {
+    width: 100px;
+    height: $font-large;
+    margin: $line-margin 0;
+    @include skeleton-background(app-animation-skeleton-background);
+  }
+
+  .app-articles-preview-card__paragraph {
+    padding: 1em 0;
+    .app-articles-preview-card__paragraph-line {
+      width: 100%;
+      height: $font-small;
+      margin: $line-margin 0;
+      @include skeleton-background(app-animation-skeleton-background);
+    }
+  }
+
+  .app-articles-preview-card__image {
+    @include skeleton-background(app-animation-skeleton-background);
+  }
+}

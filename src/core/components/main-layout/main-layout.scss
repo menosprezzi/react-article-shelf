@@ -1,0 +1,39 @@
+@import '../../theme/variables/variables';
+
+.app-main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .app-main-layout__header {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 0 map_get($spacers, 3);
+    z-index: $z-header;
+    box-shadow: $z2-shadow;
+
+    @include down-md() {
+      padding: 0 map_get($spacers, 2);
+      min-height: 56px;
+    }
+
+    .app-main-layout__header-inner-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .app-main-layout__content {
+    padding: map_get($spacers, 3);
+    height: 100%;
+    background: var-color("neutral", "lighter");
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include down-md() {
+      padding: map_get($spacers, 2);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../../core/theme/variables/variables";
+
+.app-filter-bar {
+  display: flex;
+  align-items: center;
+
+  .app-filter-bar__items {
+    display: flex;
+    padding: 0 map_get($spacers, 3);
+  }
+
+  .app-filter-bar__label {
+    color: var-color("neutral", "darker");
+  }
+}
+
+.app-filter-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 map_get($spacers, 2);
+  height: map_get($spacers, 4);
+  border: 1px solid var-color("neutral", "dark");
+  border-radius: map_get($spacers, 4);
+  background: var-color("neutral", "normal");
+  color: var-color("neutral", "darker");
+  transition: border $default-transition, color $default-transition;
+
+  &:hover {
+    border: 1px solid var-color("primary", "normal");
+    color: var-color("primary", "normal");
+  }
+
+  &.app-filter-item--active {
+    border: 1px solid var-color("primary", "normal");
+    background: var-color("primary", "normal");
+    color: var-color("primary", "contrast");
+  }
+}

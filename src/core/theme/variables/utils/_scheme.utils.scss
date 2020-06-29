@@ -1,0 +1,10 @@
+@mixin color-scheme($name) {
+  :root {
+    @media (prefers-color-scheme: $name) {
+      @content
+    }
+  }
+  html[data-theme=#{$name}] {
+    @content
+  }
+}

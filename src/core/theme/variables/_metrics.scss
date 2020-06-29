@@ -1,0 +1,44 @@
+// Spacing
+$spacer-tiny: 8px;
+$spacer-small: 16px;
+$spacer-medium: 24px;
+$spacer-large: 32px;
+$spacer-huge: 40px;
+
+$spacers: (
+  0: 0,
+  1: $spacer-tiny,
+  2: $spacer-small,
+  3: $spacer-medium,
+  4: $spacer-large,
+  5: $spacer-huge
+);
+
+// Default Metrics
+$border-radius-default: 4px;
+
+// Font
+$font-xtiny: 10px;
+$font-tiny: 12px;
+$font-small: 14px;
+$font-medium: 16px;
+$font-large: 20px;
+$font-huge: 24px;
+
+$paragraph-line-height: 1.4;
+$line-margin: $font-small * $paragraph-line-height - $font-small;
+
+// Z indexes
+$z-header: 1;
+$z-overlay: 2;
+
+// Screen Sizes
+// The minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries
+$screen-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

@@ -1,0 +1,108 @@
+@import "../variables/variables";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Global Text Style Reset
+// ---------------------------------------------------------------------------------------------------------------------
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var-color("neutral", "contrast");
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: $font-huge;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: $font-large;
+}
+
+h3 {
+  font-size: $font-medium;
+}
+
+h4 {
+  font-size: $font-small;
+}
+
+h5 {
+  font-size: $font-tiny;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: $font-tiny;
+}
+
+p {
+  color: var-color("neutral", "contrast", 0.6);
+  font-size: $font-small;
+  line-height: $paragraph-line-height;
+}
+
+small {
+  font-size: $font-tiny;
+}
+
+a[href] {
+  color: var-color("primary", "light");
+  text-decoration: none;
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+  &:active, &:visited {
+    color: var-color("primary", "dark");
+  }
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Text Utils
+// ---------------------------------------------------------------------------------------------------------------------
+
+.app-font--italic {
+  font-style: italic;
+}
+
+.app-font--light {
+  font-weight: 300;
+}
+
+.app-font--regular {
+  font-weight: normal;
+}
+
+.app-font--bold {
+  font-weight: bold;
+}
+
+.app-text--secondary {
+  color: var-color("neutral", "contrast", 0.6);
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Text Color Utils
+// ---------------------------------------------------------------------------------------------------------------------
+
+@each $color in map-keys($theme) {
+  @each $variation in map-keys(map_get($theme, $color)) {
+    @if $variation != "normal" {
+      .app-text--#{$color}-#{$variation} {
+        color: var-color($color, $variation);
+      }
+    }
+  }
+
+  .app-text--#{$color} {
+    color: var-color($color, "normal");
+  }
+}

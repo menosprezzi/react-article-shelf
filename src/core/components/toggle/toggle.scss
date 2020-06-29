@@ -1,0 +1,39 @@
+@import "../../theme/variables/variables";
+
+.app-toggle {
+  display: block;
+  width: 48px;
+  height: map_get($spacers, 4);
+  padding: 6px;
+  border: none;
+  border-radius: 28px;
+  box-sizing: border-box;
+  background: var-color("neutral", "light");
+
+  .app-toggle__bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+    color: var-color("neutral", "contrast");
+    background: var-color("neutral", "normal");
+    transition: transform $default-transition, background $default-transition, color $default-transition;
+  }
+
+  .app-toggle__native {
+    display: none;
+    &:checked + .app-toggle__bullet {
+      transform: translateX(calc(100% - 4px));
+    }
+  }
+
+  &:hover {
+    .app-toggle__bullet {
+      background: var-color("primary", "normal");
+      color: var-color("primary", "contrast")
+    }
+  }
+}

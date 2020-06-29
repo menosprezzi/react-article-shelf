@@ -1,0 +1,45 @@
+@import "variables/variables";
+@import "global/scrollbar";
+@import "global/skeletons";
+@import "global/typography";
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var-color("neutral", "normal");
+}
+
+@include color-scheme("dark") {
+  @include generate-theme-css-var("neutral", "normal", $neutral__black);
+  @include generate-theme-css-var("neutral", "contrast", $neutral__white);
+  @include generate-theme-css-var("neutral", "dark", #C4C4C4);
+  @include generate-theme-css-var("neutral", "darker", #E5E5E5);
+  @include generate-theme-css-var("neutral", "light", #555);
+  @include generate-theme-css-var("neutral", "lighter", #222);
+}
+@include color-scheme("light") {
+  @include generate-theme-css-var("neutral", "normal", $neutral__white);
+  @include generate-theme-css-var("neutral", "contrast", $neutral__black);
+  @include generate-theme-css-var("neutral", "dark", #A0A0A0);
+  @include generate-theme-css-var("neutral", "darker", #646464);
+  @include generate-theme-css-var("neutral", "light", #E6E6E6);
+  @include generate-theme-css-var("neutral", "lighter", #F5F5F5);
+}
+
+.app-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: map_get($screen-breakpoints, "lg");
+
+  &.app-container--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+}
+
+.app-page-header {
+  padding: map_get($spacers, 3) 0;
+}

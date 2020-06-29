@@ -1,0 +1,15 @@
+@import "../metrics";
+@import "color.utils";
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Skeleton Utils
+// ---------------------------------------------------------------------------------------------------------------------
+
+@mixin skeleton-background($animation-name) {
+  visibility: visible !important;
+  animation: $animation-name 3s linear 0s infinite normal none running;
+  border-radius: $border-radius-default;
+  background:
+    var-color("neutral", "contrast", .08) linear-gradient(90deg, var-color("neutral", "normal", .2) 8%,
+    var-color("neutral", "contrast", .04) 38%, var-color("neutral", "normal", .2) 60%) 0% 0% / 1000px;
+}

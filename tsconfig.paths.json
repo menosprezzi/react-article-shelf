@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@core/*": ["core/*"],
+
+      "@app/articles/*": ["modules/articles/*"],
+      "@app/authors/*": ["modules/authors/*"]
+    }
+  }
+}

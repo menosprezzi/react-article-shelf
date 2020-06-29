@@ -1,0 +1,21 @@
+@import "../metrics";
+@import "color.utils";
+
+/**
+ * Applies the scrollbar theme to a selector.
+ */
+@mixin scrollbar($selector) {
+  #{$selector}::-webkit-scrollbar {
+    width: $spacer-tiny;
+    height: $spacer-tiny;
+  }
+  #{$selector}::-webkit-scrollbar-track {
+    background: var-color("neutral", "contrast", 0.2);
+  }
+  #{$selector}::-webkit-scrollbar-thumb {
+    background: var-color("neutral", "contrast", 0.3);
+  }
+  #{$selector}::-webkit-scrollbar-thumb:hover {
+    background: var-color("neutral", "contrast", 0.4);
+  }
+}

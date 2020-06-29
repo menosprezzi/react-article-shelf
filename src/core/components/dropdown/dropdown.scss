@@ -1,0 +1,27 @@
+@import "../../theme/variables/variables";
+
+.app-dropdown {
+  position: relative;
+  .app-dropdown__native {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .app-panel {
+    position: absolute;
+    left: 0;
+    z-index: $z-overlay;
+    margin-top: map_get($spacers, 1);
+  }
+}
+
+.app-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: map_get($spacers, 2);
+  border-radius: $border-radius-default * 4;
+  background: var-color("neutral", "normal");
+  box-shadow: $z2-shadow;
+}
